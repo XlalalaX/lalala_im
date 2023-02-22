@@ -1,0 +1,43 @@
+app:
+  name: lalala_im_receive_dev
+  version: 1.0.0
+  host: ""
+  run_mode: info
+  auth:
+    secret: lalala
+server:
+  http:
+    port: 3004
+    read_timeout: 10
+    write_timeout: 10
+#    ws:
+#      private_ip: 192.168.31.240
+#      websocket_max_conn_num: 100
+#      websocket_time_out: 60
+#      websocket_max_msg_len: 10000
+log:
+  log_path:
+  log_level: errors
+  log_encode_mod: console
+  is_console: true
+
+data:
+  mongo:
+    url: mongodb://admin:lalala@192.168.242.128:27017/?authSource=admin
+    database: la_DB
+  redis:
+    addr: 192.168.242.128:6379
+    password: ''
+  kafka:
+    addr: 192.168.242.128:9092
+    topics: [la_msg]
+#    消费组
+    consumer_group: push_group
+
+third_party:
+  email:
+    sender:
+    name:
+    pass:
+    host: smtp.163.com
+    port: 465
